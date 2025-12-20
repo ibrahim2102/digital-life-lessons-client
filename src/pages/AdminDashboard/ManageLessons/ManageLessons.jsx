@@ -49,27 +49,6 @@ const ManageLessons = () => {
     }
   };
 
-  // const handleToggleFeatured = async (lesson) => {
-  //   setUpdatingId(lesson._id);
-  //   try {
-  //     const res = await axiosSecure.patch(`/admin/lessons/${lesson._id}`, {
-  //       isFeatured: !lesson.isFeatured
-  //     });
-  //     if (res.data.success) {
-  //       toast.success(lesson.isFeatured ? 'Removed from featured' : 'Marked as featured');
-  //       setLessons(prev =>
-  //         prev.map(l => l._id === lesson._id ? { ...l, isFeatured: !lesson.isFeatured } : l)
-  //       );
-  //     } else {
-  //       toast.error(res.data.message || 'Failed to update lesson');
-  //     }
-  //   } catch (err) {
-  //     console.error('Error updating featured flag:', err);
-  //     toast.error(err.response?.data?.message || 'Failed to update lesson');
-  //   } finally {
-  //     setUpdatingId(null);
-  //   }
-  // };
 
   // handler
 const handleToggleFeatured = async (lesson) => {
