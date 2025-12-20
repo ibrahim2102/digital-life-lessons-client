@@ -21,7 +21,6 @@ const DashboardLayout = () => {
     
     {/* Page content here */}
 
-    
     <Outlet></Outlet>
 
     {/* <div className="p-4">Page Content</div> */}
