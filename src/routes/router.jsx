@@ -26,6 +26,7 @@ import DetailsLessonInformation from "../pages/DetailsLessonInformation/DetailsL
 import CreatorProfile from "../pages/CreatorProfile/CreatorProfile";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AdminProfile from "../pages/AdminDashboard/AdminProfile/AdminProfile";
+import PaymentCancel from "../pages/Pricing/Payment/PaymentCancel/PaymentCancel";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
         path: 'payment-success',
         element: <PrivateRoute><PaymentSuccess /></PrivateRoute>
       },
+       {
+      path: 'payment-cancel',
+      Component: PaymentCancel
+    },
       {
         path: 'details-lessons',
         Component: DetailsLessons

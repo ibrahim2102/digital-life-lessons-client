@@ -26,7 +26,6 @@ const usePremium = () => {
         setLoading(false);
       }
     };
-
     fetchPremiumStatus();
   }, [user?.email, axiosSecure]);
 
