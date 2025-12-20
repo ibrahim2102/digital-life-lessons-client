@@ -67,12 +67,7 @@ const MostSavedLessons = () => {
               </div>
               <div className="flex items-center gap-4 text-xs text-gray-500">
                 <span>Saves: <span className="font-semibold">{lesson.saves ?? 0}</span></span>
-                {/* <Link
-                  to={`/lessons/${lesson._id}`}
-                  className="text-xs font-medium text-indigo-600 hover:text-indigo-700"
-                >
-                  Open →
-                </Link> */}
+          
               </div>
             </li>
           ))}
