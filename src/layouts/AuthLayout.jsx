@@ -8,7 +8,6 @@ const AuthLayout = () => {
             <Logo></Logo>
 
             <Outlet></Outlet>
-
         </div>
     );
 };
