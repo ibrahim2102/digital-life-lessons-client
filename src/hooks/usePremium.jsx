@@ -13,7 +13,6 @@ const usePremium = () => {
       setLoading(false);
       return;
     }
-
     const fetchPremiumStatus = async () => {
       try {
         const res = await axiosSecure.get('/users/premium-status', {
