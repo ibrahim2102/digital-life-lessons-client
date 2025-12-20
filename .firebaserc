@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "life-lessons-client",
+    "prod": "digital-life-lessons-140b5"
+  },
+  "targets": {},
+  "etags": {}
+}

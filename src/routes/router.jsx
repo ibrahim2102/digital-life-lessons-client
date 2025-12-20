@@ -26,7 +26,7 @@ import DetailsLessonInformation from "../pages/DetailsLessonInformation/DetailsL
 import CreatorProfile from "../pages/CreatorProfile/CreatorProfile";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AdminProfile from "../pages/AdminDashboard/AdminProfile/AdminProfile";
-import PaymentCancel from "../pages/Pricing/Payment/PaymentCancel/PaymentCancel";
+import PaymentCancel from "../pages/Pricing/PaymentCancel/PaymentCancel";
 
 export const router = createBrowserRouter([
   {
@@ -50,10 +50,10 @@ export const router = createBrowserRouter([
         path: 'payment-success',
         element: <PrivateRoute><PaymentSuccess /></PrivateRoute>
       },
-       {
-      path: 'payment-cancel',
-      Component: PaymentCancel
-    },
+      {
+        path: 'payment-cancel',
+        Component: PaymentCancel
+      },
       {
         path: 'details-lessons',
         Component: DetailsLessons
@@ -65,14 +65,7 @@ export const router = createBrowserRouter([
       {
         path: 'creator-profile/:email',
         Component: CreatorProfile
-      }
-    ]
-  },
-  {
-    path: '/',
-    Component: AuthLayout,
-    errorElement: <ErrorPage />,
-    children: [
+      },
       {
         path: 'login',
         Component: Login
@@ -136,10 +129,13 @@ export const router = createBrowserRouter([
         Component: ReportedLessons
       },
       {
-      path: 'profile',
-      Component: AdminProfile
-    }
+        path: 'profile',
+        Component: AdminProfile
+      }
     ]
   },
-  
+  {
+    path: '*',
+    Component: ErrorPage
+  }
 ]);
