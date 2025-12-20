@@ -6,14 +6,14 @@ import bannerImg2 from '../../../assets/banner2.jpg'
 import bannerImg3 from '../../../assets/banner3.jpg'
 
 const Banner = () => {
-    const imgStyle = { width: '100%', height: '320px', objectFit: 'cover', display: 'block' }; // adjust height as needed
+    const imgStyle = { width: '100%', height: '320px', objectFit: 'cover', display: 'block' }; 
 
     return (
            <Carousel
                className="banner-carousel"
                dynamicHeight={false}
                showThumbs={false}
-               thumbHeight={120}         // adjust thumbnail width
+               thumbHeight={120}       
                showStatus={false}
                showIndicators={true}
                autoPlay={true}
