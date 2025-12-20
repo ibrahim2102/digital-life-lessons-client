@@ -75,12 +75,7 @@ const TopContributors = () => {
                   </p>
                 </div>
               </div>
-              {/* <Link
-                to="/dashboard/my-profile"
-                className="text-xs font-medium text-indigo-600 hover:text-indigo-700"
-              >
-                View profile
-              </Link> */}
+        
             </div>
           ))}
 
