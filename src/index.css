@@ -3,7 +3,6 @@
    themes: light --default;
 }
 
-
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
