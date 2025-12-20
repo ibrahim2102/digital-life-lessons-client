@@ -10,12 +10,6 @@ const AdminOverview = () => {
   const [lessonGrowth, setLessonGrowth] = useState([]);
   const [userGrowth, setUserGrowth] = useState([]);
 
-//   useEffect(() => {
-//     axiosSecure.get('/admin/stats').then(res => setStats(res.data));
-//     axiosSecure.get('/admin/lesson-growth').then(res => setLessonGrowth(res.data));
-//     axiosSecure.get('/admin/user-growth').then(res => setUserGrowth(res.data));
-//   }, [axiosSecure]);
-
 
 useEffect(() => {
   const fetchStats = async () => {
@@ -38,19 +32,6 @@ useEffect(() => {
 
   return () => clearInterval(interval); // cleanup on unmount
 }, [axiosSecure]);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   return (
