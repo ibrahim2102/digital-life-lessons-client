@@ -10,8 +10,6 @@ const ReportedLessons = () => {
   const [processingId, setProcessingId] = useState(null);
 
   /**
-   * 1. fetchReports wrapped in useCallback to prevent 
-   * unnecessary re-creations and fix ESLint warnings.
    */
   const fetchReports = useCallback(async () => {
     try {
@@ -47,9 +45,6 @@ const ReportedLessons = () => {
       const lessonsResults = await Promise.all(lessonFetches);
 
       /**
-       * 2. CRITICAL FILTER:
-       * Only include reports where the lesson actually exists in the DB.
-       * If a lesson was deleted, 'lesson' will be null, and we filter it out.
        */
       const items = lessonsResults
         .filter(({ lesson }) => lesson !== null) 
