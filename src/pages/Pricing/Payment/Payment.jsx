@@ -29,7 +29,7 @@ const Payment = () => {
 
       // --- 1. CHANGE: Only send the fixed cost and senderEmail ---
       const res = await axiosSecure.post('/create-checkout-session', {
-        // We still send 'cost' to indicate the intent, and the backend verifies it.
+        
         cost: FIXED_SUBSCRIPTION_PRICE, 
         senderEmail: user.email,
       });
