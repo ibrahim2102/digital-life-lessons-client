@@ -3,12 +3,12 @@ import Logo from '../../../components/Logo/Logo';
 import { Link, NavLink } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import usePremium from '../../../hooks/usePremium';
-import useRole from '../../../hooks/useRole'; // Add this import
+import useRole from '../../../hooks/useRole'; 
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
     const { isPremium } = usePremium();
-    const { role } = useRole(); // Get role from MongoDB
+    const { role } = useRole(); 
 
     const handleLogOut = () => {
         logOut()
