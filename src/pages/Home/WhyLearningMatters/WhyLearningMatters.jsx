@@ -8,18 +8,22 @@ const benefits = [
 ];
 
 const WhyLearningMatters = () => (
-  <section className="space-y-4">
-    <div>
-      <h2 className="text-2xl font-semibold">Why Learning From Life Matters</h2>
-      <p className="text-sm text-gray-500">Four reasons our community keeps coming back.</p>
+  <section className="py-16 bg-base-200">
+    <div className="container mx-auto px-4 space-y-8">
+    <div className="text-center">
+      <h2 className="text-3xl font-bold mb-4">Why Learning From Life Matters</h2>
+      <p className="text-base-content/70">Four reasons our community keeps coming back.</p>
     </div>
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {benefits.map((item) => (
-        <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold">{item.title}</h3>
-          <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
+        <div key={item.title} className="card bg-base-100 shadow-xl border border-base-200">
+          <div className="card-body">
+            <h3 className="card-title text-lg">{item.title}</h3>
+            <p className="text-sm text-base-content/70">{item.desc}</p>
+          </div>
         </div>
       ))}
+    </div>
     </div>
   </section>
 );

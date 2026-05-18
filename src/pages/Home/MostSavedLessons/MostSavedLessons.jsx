@@ -23,17 +23,18 @@ const MostSavedLessons = () => {
   }, [axiosSecure]);
 
   return (
-    <section className="space-y-4">
+    <section className="py-16 bg-base-200">
+      <div className="container mx-auto px-4 space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-semibold">Most Saved Lessons</h2>
-          <p className="text-sm text-gray-500">
+          <h2 className="text-3xl font-bold">Most Saved Lessons</h2>
+          <p className="text-sm text-base-content/70 mt-2">
             Simple ranking of lessons with the highest saves.
           </p>
         </div>
         <Link
           to="/lessons/saved"
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+          className="btn btn-secondary btn-outline btn-sm"
         >
           See rankings
         </Link>
@@ -44,35 +45,36 @@ const MostSavedLessons = () => {
           <span className="loading loading-spinner loading-md" />
         </div>
       ) : lessons.length === 0 ? (
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-base-content/60">
           No saved lessons yet. Start bookmarking favorites.
         </p>
       ) : (
-        <ul className="divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white">
+        <ul className="divide-y divide-base-200 rounded-xl border border-base-200 bg-base-100 shadow-sm">
           {lessons.map((lesson, index) => (
-            <li key={lesson._id} className="flex items-center justify-between px-4 py-3">
-              <div className="flex items-center gap-3">
-                <span className="w-6 text-sm font-semibold text-gray-500">
+            <li key={lesson._id} className="flex items-center justify-between px-6 py-4 hover:bg-base-200/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <span className="w-8 text-lg font-bold text-base-content/50">
                   #{index + 1}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-base font-semibold text-base-content">
                     {lesson.title}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-base-content/60 mt-1">
                     {lesson.author?.name || lesson.author?.email || 'Anonymous'} •{' '}
                     {lesson.category || 'Life'}
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-xs text-gray-500">
-                <span>Saves: <span className="font-semibold">{lesson.saves ?? 0}</span></span>
+              <div className="flex items-center gap-4 text-xs text-base-content/70">
+                <span className="badge badge-ghost gap-2">Saves: <span className="font-bold">{lesson.saves ?? 0}</span></span>
           
               </div>
             </li>
           ))}
         </ul>
       )}
+      </div>
     </section>
   );
 };

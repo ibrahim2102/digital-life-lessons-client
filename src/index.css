@@ -1,11 +1,160 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-   themes: light --default;
+   themes: light --default, dark --prefers;
 }
 
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: blue;
-  --color-secondary: teal;
+  --color-primary: #2563eb;
+  --color-primary-content: #ffffff;
+  --color-secondary: #0891b2;
+  
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #3b82f6;
+  --color-primary-content: #ffffff;
+  --color-secondary: #06b6d4;
+}
+
+/* Custom dark theme styles for better contrast */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tw-bg-opacity: 1;
+  }
+}
+
+/* Ensure proper contrast for text elements */
+.dark .text-base-content {
+  color: #f9fafb;
+}
+
+.dark .text-neutral-content {
+  color: #ffffff;
+}
+
+.dark .bg-base-100 {
+  background-color: #111827;
+}
+
+.dark .bg-base-200 {
+  background-color: #1f2937;
+}
+
+.dark .bg-base-300 {
+  background-color: #374151;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0066cc;
+    --color-secondary: #008080;
+    --color-accent: #8000ff;
+  }
+  
+  .dark {
+    --color-primary: #66b3ff;
+    --color-secondary: #40e0d0;
+    --color-accent: #b366ff;
+  }
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.dark *:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+/* Ensure proper contrast for interactive elements */
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.dark .btn:hover {
+  filter: brightness(1.2);
+}
+
+/* Form elements contrast */
+.input, .textarea, .select {
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
+  border-color: var(--color-base-300);
+}
+
+.dark .input, .dark .textarea, .dark .select {
+  background-color: var(--color-base-200);
+  color: var(--color-base-content);
+  border-color: var(--color-base-300);
+}
+
+/* Card and container contrast */
+.card {
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
+}
+
+.dark .card {
+  background-color: var(--color-base-200);
+  color: var(--color-base-content);
+}
+
+/* Link contrast */
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary);
+  filter: brightness(1.2);
+}
+
+.dark a:hover {
+  filter: brightness(1.3);
+}
+
+/* Badge and tag contrast */
+.badge {
+  color: var(--color-base-100);
+}
+
+.badge-outline {
+  color: var(--color-base-content);
+  border-color: var(--color-base-content);
+}
+
+/* Toast notifications contrast */
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  background-color: var(--color-success) !important;
+  color: var(--color-success-content) !important;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--error {
+  background-color: var(--color-error) !important;
+  color: var(--color-error-content) !important;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--info {
+  background-color: var(--color-info) !important;
+  color: var(--color-info-content) !important;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--warning {
+  background-color: var(--color-warning) !important;
+  color: var(--color-warning-content) !important;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

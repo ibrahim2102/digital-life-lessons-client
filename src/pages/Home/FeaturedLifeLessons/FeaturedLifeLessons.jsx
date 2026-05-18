@@ -69,7 +69,8 @@ const FeaturedLifeLessons = () => {
   };
 
   return (
-    <section className="w-full space-y-6">
+    <section className="py-16 bg-base-100">
+      <div className="container mx-auto px-4 space-y-6">
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
@@ -83,7 +84,7 @@ const FeaturedLifeLessons = () => {
 
         <Link
           to="/dashboard/add-lessons"
-          className="btn btn-primary btn-sm gap-2"
+          className="btn btn-neutral btn-sm gap-2"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -235,6 +236,7 @@ const FeaturedLifeLessons = () => {
           ))}
         </div>
       )}
+      </div>
     </section>
   );
 };

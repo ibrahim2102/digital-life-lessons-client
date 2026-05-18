@@ -25,17 +25,18 @@ const TopContributors = () => {
   }, [axiosSecure]);
 
   return (
-    <section className="space-y-4">
+    <section className="py-16 bg-base-100">
+      <div className="container mx-auto px-4 space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-semibold">Top Contributors of the Week</h2>
-          <p className="text-sm text-gray-500">
+          <h2 className="text-3xl font-bold">Top Contributors of the Week</h2>
+          <p className="text-sm text-base-content/70 mt-2">
             Creators whose lessons are helping the community grow.
           </p>
         </div>
         <Link
           to="/dashboard/add-lessons"
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+          className="btn btn-primary btn-outline btn-sm"
         >
           Add your lesson
         </Link>
@@ -50,26 +51,23 @@ const TopContributors = () => {
           {contributors.map((c, idx) => (
             <div
               key={c.email || idx}
-              className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white/80 p-4 shadow-sm hover:shadow-md transition"
+              className="card bg-base-100 shadow-md hover:shadow-lg transition-all border border-base-200"
             >
-              <div className="flex items-center gap-3">
+              <div className="card-body flex flex-row items-center gap-4 p-4">
                 {/* Avatar */}
                 <div className="avatar placeholder">
-                  <div className="w-10 rounded-full bg-indigo-100 text-indigo-700">
-                    <span className="text-sm font-semibold">
+                  <div className="w-12 rounded-full bg-primary/10 text-primary">
+                    <span className="text-lg font-bold">
                       {(c.name || c.email || '?').charAt(0).toUpperCase()}
                     </span>
                   </div>
                 </div>
                 {/* Info */}
                 <div>
-                  <p className="text-sm font-semibold">
+                  <h3 className="font-bold text-base">
                     {c.name || c.email || 'Unknown user'}
-                  </p>
-                  {/* <p className="text-xs text-gray-500">
-                    {c.email}
-                  </p> */}
-                  <p className="mt-1 text-xs text-gray-500">
+                  </h3>
+                  <p className="text-xs text-base-content/60 mt-1">
                     {c.totalLessons} lesson{c.totalLessons !== 1 ? 's' : ''} •{' '}
                     {c.totalSaves ?? 0} saves • {c.totalViews ?? 0} views
                   </p>
@@ -80,12 +78,13 @@ const TopContributors = () => {
           ))}
 
           {!loading && contributors.length === 0 && (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-base-content/60 text-center w-full col-span-full">
               No contributors yet. Encourage users to share their first lesson!
             </p>
           )}
         </div>
       )}
+      </div>
     </section>
   );
 };
